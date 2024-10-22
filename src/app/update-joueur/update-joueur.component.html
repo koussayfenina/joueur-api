@@ -1,0 +1,40 @@
+<div class="container">
+    <div>
+    <h2>Modifier un Produit :</h2>
+    </div>
+    <form >
+    <div class="col-sm-2 col-md-2 col-lg-2">
+    <label rea>ID Joueur</label>
+    <input type="text" readonly [(ngModel)]="currentjoueur.idjoueur"
+    name="idjoueur" class="form-control">
+    </div>
+    <div class="col-sm-4 col-md-4 col-lg-4" >
+    <label >Nom Joueur</label>
+    <input type="text"[(ngModel)]= "currentjoueur.nomjoueur"
+    name="nomjoueur" class="form-control">
+    </div>
+    <div class="col-sm-2 col-md-2 col-lg-2">
+    <label >Prix Joueur</label>
+    <input type="number" [(ngModel)]= "currentjoueur.prixjoueur"
+    name="prixjoueur" class="form-control">
+    </div>
+    <div class="col-sm-4 col-md-4 col-lg-4">
+    <label >Equipe De Joueur</label>
+<input type="text" [ngModel]="currentjoueur.equipejoueur"
+(ngModelChange)=" currentjoueur.equipejoueur= $event" name="equipejoueur"
+ class="form-control">
+</div>
+
+<div class="col-sm-4 col-md-4 col-lg-4">
+    <label for="">Position  De Joueur</label>
+    <select class="form-control form-control-lg" id="idCat" name="idCat" [(ngModel)]="updatedposId">
+        <option *ngFor="let cat of position" [value]="cat.idPos">
+            {{cat.nomPos}}
+        </option>
+    </select>
+</div>
+<div class="mt-2">
+<button type="submit" (click)=" updateProduit()" class="btn btn-success" routerLink="/joueurs">Modifer</button>
+</div>
+</form>
+</div>

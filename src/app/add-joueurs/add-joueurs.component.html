@@ -1,0 +1,38 @@
+<div class="container">
+    <div>
+    <h2>Ajouter un Joueur :</h2>
+    </div>
+    <form >
+        <div class="col-sm-2 col-md-2 col-lg-2">
+        <label >ID Joueur</label>
+        <input type="text" [(ngModel)]="newjoueur.idjoueur"
+        name="idjoueur" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4" >
+        <label >Nom Joueur</label>
+        <input type="text"[(ngModel)]= "newjoueur.nomjoueur"
+        name="nomjoueur" class="form-control">
+        </div>
+        <div class="col-sm-2 col-md-2 col-lg-2">
+        <label >Prix Joueur</label>
+        <input type="number" [(ngModel)]= "newjoueur.prixjoueur"
+        name="prixjoueur" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+        <label >Equipe De Joueur</label>
+        <input type="text" [(ngModel)]= "newjoueur.equipejoueur"
+        name="equipejoueur" class="form-control">
+        </div>
+        <div>
+            <label for="position">Position</label>
+            <select [(ngModel)]="newIdPos" name="position" class="form-control">
+              <option *ngFor="let pos of position" [value]="pos.idPos">{{ pos.nomPos }}</option>
+            </select>
+          </div>
+          
+        <div class="mt-2">
+        <button type="submit" (click)="addJoueur()" class="btn btn-success" routerLink="/joueurs">Ajouter</button>
+        </div>
+        </form>
+        </div>
+            
